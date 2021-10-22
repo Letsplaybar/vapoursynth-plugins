@@ -1,3 +1,4 @@
+.DEFAULT_GOAL := all
 AUTOGEN = $(shell find plugins -type f -not -path "*Avi*" -name "autogen.sh" -exec dirname "{}" \; )
 CONFIG = $(shell find plugins -type f -not -path "*Avi*" -name "configure" -exec dirname "{}" \; )
 MEASON = $(shell find plugins -type f -not -path "*Avi*" -name "meson.build" -exec dirname "{}" \; )
