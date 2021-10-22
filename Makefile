@@ -8,8 +8,8 @@ SCRIPTS = $(shell find scripts -type f -name "*.py")
 PWD = $(shell pwd)
 
 compile:
-    $(foreach DIR,$(AUTOGEN), $(shell cd $(DIR); ./autogen.sh; ./configure; echo $(DIR); make; cd $(PWD) ))
-    $(foreach DIR,$(CONFIG), $(shell cd $(DIR); ./configure; make; cd $(PWD) ))
+    $(foreach DIR,$(AUTOGEN), $(shell cd $(DIR); ./autogen.sh; ./configure; echo $(DIR) > /dev/stderr ; make -j4; cd $(PWD) ))
+    $(foreach DIR,$(CONFIG), $(shell cd $(DIR); ./configure; make -j4; cd $(PWD) ))
     $(shell cd plugins/flash3kyuu_deband/; ./waf configure; ./waf build; cd $(PWD)  )
     $(foreach DIR,$(MEASON), $(shell cd $(DIR); ./meson build; ninja -C build; cd $(PWD) ))
     $(shell cd plugins/vapoursynth-wwxd/; gcc -o libwwxd.so -fPIC -shared -O2 -Wall -Wextra -Wno-unused-parameter $(pkg-config --cflags vapoursynth) src/wwxd.c src/detection.c; cd $(PWD) )
