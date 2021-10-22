@@ -1,7 +1,7 @@
 .DEFAULT_GOAL := compile install
 AUTOGEN = $(shell find plugins -type f -not -path "*Avi*" -name "autogen.sh" -exec dirname "{}" \; )
 CONFIG = $(shell find plugins -type f -not -path "*Avi*" -name "configure" -exec dirname "{}" \; )
-MEASON = $(shell find plugins -type f -not -path "*Avi*" -name "meson.build" -exec dirname "{}" \; )
+MEASON = $(shell find plugins -type f -not -path "*Avi*" -not -path "*TDeintMod*" -name "meson.build" -exec dirname "{}" \; )
 PLUGINS = $(shell find plugins -type f -not -path "*Avi*" -name "*.py")
 SCRIPTS = $(shell find scripts -type f -name "*.py")
 
