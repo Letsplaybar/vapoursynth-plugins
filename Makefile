@@ -8,7 +8,7 @@ SCRIPTS = $(shell find scripts -type f -name "*.py")
 PWD = $(shell pwd)
 
 compile:
-    $(foreach DIR,$(AUTOGEN), $(shell cd $(DIR); ./autogen.sh; ./configure; make; cd $(PWD) ))
+    $(foreach DIR,$(AUTOGEN), $(shell cd $(DIR); ./autogen.sh; ./configure; echo $(DIR); make; cd $(PWD) ))
     $(foreach DIR,$(CONFIG), $(shell cd $(DIR); ./configure; make; cd $(PWD) ))
     $(shell cd plugins/flash3kyuu_deband/; ./waf configure; ./waf build; cd $(PWD)  )
     $(foreach DIR,$(MEASON), $(shell cd $(DIR); ./meson build; ninja -C build; cd $(PWD) ))
