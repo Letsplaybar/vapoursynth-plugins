@@ -74,7 +74,6 @@ make
 [tcomb](https://github.com/dubhater/vapoursynth-tcomb)<br>
 [tdeintmod](https://github.com/HomeOfVapourSynthEvolution/VapourSynth-TDeintMod)<br>
 [templinearapproximate](https://bitbucket.org/mystery_keeper/templinearapproximate-vapoursynth)<br>
-[temporalsoften](https://github.com/dubhater/vapoursynth-temporalsoften)<br>
 [tnlmeans](https://github.com/VFR-maniac/VapourSynth-TNLMeans)<br>
 [ttempsmooth](https://github.com/HomeOfVapourSynthEvolution/VapourSynth-TTempSmooth)<br>
 [vaguedenoiser](https://github.com/HomeOfVapourSynthEvolution/VapourSynth-VagueDenoiser)<br>
