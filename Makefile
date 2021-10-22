@@ -8,8 +8,7 @@ SCRIPTS = $(shell find scripts -type f -name "*.py")
 PWD = $(shell pwd)
 
 all:
-    compile
-    install
+    compile install
 
 compile:
     $(foreach DIR,$(AUTOGEN), shell cd $(DIR); ./autogen.sh; ./configure; make; cd $(PWD))
