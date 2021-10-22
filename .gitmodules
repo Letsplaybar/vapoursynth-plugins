@@ -148,9 +148,6 @@
 [submodule "plugins/templinearapproximate-vapoursynth"]
 	path = plugins/templinearapproximate-vapoursynth
 	url = https://bitbucket.org/mystery_keeper/templinearapproximate-vapoursynth
-[submodule "plugins/vapoursynth-temporalsoften"]
-	path = plugins/vapoursynth-temporalsoften
-	url = https://github.com/dubhater/vapoursynth-temporalsoften
 [submodule "plugins/VapourSynth-TNLMeans"]
 	path = plugins/VapourSynth-TNLMeans
 	url = https://github.com/VFR-maniac/VapourSynth-TNLMeans
