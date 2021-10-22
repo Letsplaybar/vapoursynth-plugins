@@ -17,7 +17,7 @@ libboost-filesystem-dev libboost-system-dev libcompute-dev
 
 **Installation**:
 ```
-git clone https://github.com/Letsplaybar/vapoursynth-plugins.git
+git clone --recurse-submodules -j8 https://github.com/Letsplaybar/vapoursynth-plugins.git
 cd vapoursynth-plugins
 ./autogen.sh
 ./configure
