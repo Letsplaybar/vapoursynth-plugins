@@ -10,12 +10,14 @@ PWD = $(shell pwd)
 all: compile install
 
 compile:
+	@echo "compile"
 	$(foreach DIR,$(AUTOGEN), $(shell cd $(DIR); ./autogen.sh; ./configure; make -j4; cd $(PWD)))
 	$(foreach DIR,$(CONFIG), $(shell cd $(DIR); chmod +x configure; ./configure; make -j4; cd $(PWD)))
 	$(shell cd plugins/flash3kyuu_deband/; ./waf configure; ./waf build; cd $(PWD))
 	$(foreach DIR,$(MEASON), $(shell cd $(DIR); meson build; ninja -C build; cd $(PWD)))
 
 install:
+	@echo "install"
 	$(foreach DIR,$(AUTOGEN), $(shell cd $(DIR); make install; cd $(PWD)))
 	$(foreach DIR,$(CONFIG), $(shell cd $(DIR); make install; cd $(PWD)))
 	$(shell cd plugins/flash3kyuu_deband/; ./waf install; cd $(PWD))
