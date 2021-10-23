@@ -82,6 +82,7 @@ make
 [w3dif](https://github.com/HomeOfVapourSynthEvolution/VapourSynth-W3FDIF)<br>
 [wwxd](https://github.com/dubhater/vapoursynth-wwxd)<br>
 [yadifmod](https://github.com/HomeOfVapourSynthEvolution/VapourSynth-Yadifmod)<br>
+[temporalsoften](git submodule add https://github.com/dubhater/vapoursynth-temporalsoften))
 
 
 **Scripts:**<br>
