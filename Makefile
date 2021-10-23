@@ -13,14 +13,14 @@ compile: exec_compile
 	@echo "compile"
 	$(foreach DIR,$(AUTOGEN), $(shell ./make_autogen.sh $(DIR) $(PWD)))
 	$(foreach DIR,$(CONFIG), $(shell ./make_config.sh $(DIR) $(PWD)))
-	$(shell cd plugins/flash3kyuu_deband/; ./waf configure; ./waf build; cd $(PWD))
+	$(shell echo "build waf" > /dev/stderr; cd plugins/flash3kyuu_deband/; ./waf configure; ./waf build; cd $(PWD))
 	$(foreach DIR,$(MEASON), $(shell ./make_meason.sh $(DIR) $(PWD)))
 
 install: exec_install
 	@echo "install"
 	$(foreach DIR,$(AUTOGEN), $(shell .install_autogen.sh $(DIR) $(PWD)))
 	$(foreach DIR,$(CONFIG), $(shell ./install_autogen.sh $(DIR) $(PWD)))
-	$(shell cd plugins/flash3kyuu_deband/; ./waf install; cd $(PWD))
+	$(shell echo "install waf" > /dev/stderr; cd plugins/flash3kyuu_deband/; ./waf install; cd $(PWD))
 	$(foreach DIR,$(MEASON), $(shell ./install_meason.sh $(DIR) $(PWD)))
 	$(foreach SCRIPT,$(PLUGINS), $(shell cp $(SCRIPT) /usr/lib/python3.6/))
 	$(foreach SCRIPT,$(SCRIPTS), $(shell cp $(SCRIPT) /usr/lib/python3.6/))
