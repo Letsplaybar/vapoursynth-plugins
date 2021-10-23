@@ -9,22 +9,27 @@ PWD = $(shell pwd)
 
 all: compile install
 
-compile:
+compile: exec_compile
 	@echo "compile"
-	$(foreach DIR,$(AUTOGEN), $(shell cd $(DIR); ./autogen.sh; ./configure; make -j4; cd $(PWD)))
-	$(foreach DIR,$(CONFIG), $(shell cd $(DIR); chmod +x configure; ./configure; make -j4; cd $(PWD)))
+	$(foreach DIR,$(AUTOGEN), $(shell ./make_autogen.sh $(DIR) $(PWD)))
+	$(foreach DIR,$(CONFIG), $(shell ./make_config.sh $(DIR) $(PWD)))
 	$(shell cd plugins/flash3kyuu_deband/; ./waf configure; ./waf build; cd $(PWD))
-	$(foreach DIR,$(MEASON), $(shell cd $(DIR); meson build; ninja -C build; cd $(PWD)))
+	$(foreach DIR,$(MEASON), $(shell ./make_meason.sh $(DIR) $(PWD)))
 
-install:
+install: exec_install
 	@echo "install"
-	$(foreach DIR,$(AUTOGEN), $(shell cd $(DIR); make install; cd $(PWD)))
-	$(foreach DIR,$(CONFIG), $(shell cd $(DIR); make install; cd $(PWD)))
+	$(foreach DIR,$(AUTOGEN), $(shell .install_autogen.sh $(DIR) $(PWD)))
+	$(foreach DIR,$(CONFIG), $(shell ./install_autogen.sh $(DIR) $(PWD)))
 	$(shell cd plugins/flash3kyuu_deband/; ./waf install; cd $(PWD))
-	$(foreach DIR,$(MEASON), $(shell cd $(DIR); ninja -C build install; cd $(PWD)))
+	$(foreach DIR,$(MEASON), $(shell ./install_meason.sh $(DIR) $(PWD)))
 	$(foreach SCRIPT,$(PLUGINS), $(shell cp $(SCRIPT) /usr/lib/python3.6/))
 	$(foreach SCRIPT,$(SCRIPTS), $(shell cp $(SCRIPT) /usr/lib/python3.6/))
 
+exec_compile:
+	$(shell chmod +x make*.sh)
+
+exec_install:
+	$(shell chmod +x install*.sh)
 echo:
 	@echo $(AUTOGEN)
 	@echo $(CONFIG)
