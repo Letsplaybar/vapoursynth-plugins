@@ -20,7 +20,7 @@ install: exec_install
 	$(foreach DIR,$(CONFIG), $(shell ./install_autogen.sh $(DIR) $(PWD)))
 	$(shell echo "install waf" > /dev/stderr; cd plugins/flash3kyuu_deband/; ./waf install; cd $(PWD))
 	$(foreach DIR,$(MEASON), $(shell ./install_meason.sh $(DIR) $(PWD)))
-	$(foreach SCRIPT,$(SCRIPTS), $(shell cp $(SCRIPT) /usr/lib/python3.6/))
+	$(foreach SCRIPT,$(SCRIPTS), $(shell cp $(SCRIPT) /usr/lib/python3.8/))
 
 exec_compile:
 	$(shell chmod +x make*.sh)
