@@ -46,6 +46,7 @@ clean: exec_clean
 	cd plugins/flash3kyuu_deband/; ./waf clean; cd $(PWD)
 	$(foreach DIR,$(MEASON), ./clean_meason.sh $(DIR) $(PWD);)
 	rm plugins/vapoursynth-wwxd/libwwxd.so
-
+	cd plugins/waifu2x-ncnn-vulkan/build; make clean; cd $(PWD)
+	cd plugins/vapoursynth-waifu2x-ncnn-vulkan/build; make clean; cd $(PWD)
 
 
