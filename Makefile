@@ -9,26 +9,37 @@ PWD = $(shell pwd)
 all: compile install
 
 compile: exec_compile
-	@echo "compile"
 	$(foreach DIR,$(CONFIG), ./make_config.sh $(DIR) $(PWD);)
 	$(foreach DIR,$(AUTOGEN), ./make_autogen.sh $(DIR) $(PWD);)
 	cd plugins/flash3kyuu_deband/; ./waf configure; ./waf build; cd $(PWD)
 	$(foreach DIR,$(MEASON),  ./make_meason.sh $(DIR) $(PWD);)
+	cd plugins/vapoursynth-wwxd/; gcc -o libwwxd.so -fPIC -shared -O2 -Wall -Wextra -Wno-unused-parameter $(pkg-config --cflags vapoursynth) src/wwxd.c src/detection.c; cd $(PWD)
 
 install: exec_install
-	@echo "install"
 	$(foreach DIR,$(CONFIG), ./install_autogen.sh $(DIR) $(PWD);)
 	cd plugins/flash3kyuu_deband/; ./waf install; cd $(PWD)
 	$(foreach DIR,$(MEASON), ./install_meason.sh $(DIR) $(PWD);)
 	$(foreach SCRIPT,$(SCRIPTS), cp $(SCRIPT) /usr/lib/python3.8/;)
+	cp plugins/vapoursynth-wwxd/libwwxd.so /usr/local/lib/
 
 exec_compile:
 	$(shell chmod +x make*.sh)
 
 exec_install:
 	$(shell chmod +x install*.sh)
+
+exec_clean:
+	$(shell chmod +x clean*.sh)
+
 echo:
 	@echo $(AUTOGEN)
 	@echo $(CONFIG)
 	@echo $(MEASON)
 	@echo $(SCRIPTS)
+
+clean: exec_clean
+	$(foreach DIR,$(CONFIG), ./clean_autogen.sh $(DIR) $(PWD);)
+	cd plugins/flash3kyuu_deband/; ./waf clean; cd $(PWD)
+	$(foreach DIR,$(MEASON), ./clean_meason.sh $(DIR) $(PWD);)
+	rm plugins/vapoursynth-wwxd/libwwxd.so
+
