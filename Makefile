@@ -15,7 +15,7 @@ compile: exec_compile
 	$(foreach DIR,$(MEASON),  ./make_meason.sh $(DIR) $(PWD);)
 	cd plugins/vapoursynth-wwxd/; gcc -o libwwxd.so -fPIC -shared -O2 -Wall -Wextra -Wno-unused-parameter $(pkg-config --cflags vapoursynth) src/wwxd.c src/detection.c; cd $(PWD)
 	cd plugins/waifu2x-ncnn-vulkan/; mkdir build; cd build; cmake ../src; cmake --build . -j 4; cd $(PWD)
-	cd plugins/vapoursynth-waifu2x-ncnn-vulkan/; mkdir build; cd build; cmake ..; cmake --build . -j 4; cd $(PWD)
+	cd plugins/vapoursynth-waifu2x-ncnn-vulkan/; mkdir build; cd build; cmake .. -DVAPOURSYNTH_HEADER_DIR=/usr/local/include/vapoursynth/; cmake --build . -j 4; cd $(PWD)
 
 install: exec_install
 	$(foreach DIR,$(CONFIG), ./install_autogen.sh $(DIR) $(PWD);)
