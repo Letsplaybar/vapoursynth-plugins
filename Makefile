@@ -24,7 +24,9 @@ install: exec_install
 	$(foreach SCRIPT,$(SCRIPTS), cp $(SCRIPT) /usr/lib/python3.8/;)
 	cp plugins/vapoursynth-wwxd/libwwxd.so /usr/local/lib/
 	cd plugins/waifu2x-ncnn-vulkan/build; make install; cd $(PWD)
+	cp waifu2x-ncnn-vulkan /usr/bin/
 	cd plugins/vapoursynth-waifu2x-ncnn-vulkan/build; make install; cd $(PWD)
+	cp plugins/vapoursynth-waifu2x-ncnn-vulkan/build/libvsw2xnvk.so /usr/local/lib/
 
 exec_compile:
 	$(shell chmod +x make*.sh)
