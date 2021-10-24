@@ -38,8 +38,10 @@ echo:
 	@echo $(SCRIPTS)
 
 clean: exec_clean
-	$(foreach DIR,$(CONFIG), ./clean_autogen.sh $(DIR) $(PWD);)
+	$(foreach DIR,$(CONFIG), ./clean_config.sh $(DIR) $(PWD);)
 	cd plugins/flash3kyuu_deband/; ./waf clean; cd $(PWD)
 	$(foreach DIR,$(MEASON), ./clean_meason.sh $(DIR) $(PWD);)
 	rm plugins/vapoursynth-wwxd/libwwxd.so
+
+
 
