@@ -8,10 +8,10 @@ Inspired by: https://github.com/darealshinji/vapoursynth-plugins.git
 
 **Build dependencies**:<br>
 ```
-git nasm yasm libtool pkg-config
+git nasm yasm libtool pkg-config meason cpython cmake autoconf automake 
 libfftw3-dev libpng-dev libsndfile1-dev libxvidcore-dev libbluray-dev zlib1g-dev
-libopencv-dev ocl-icd-libopencl1 opencl-headers
-libboost-filesystem-dev libboost-system-dev libcompute-dev
+libopencv-dev ocl-icd-libopencl1 opencl-headers libvulkan-dev glslang-dev
+glslang-tools libboost-filesystem-dev libboost-system-dev libcompute-dev  
 ```
 
 
@@ -83,15 +83,17 @@ make
 [wwxd](https://github.com/dubhater/vapoursynth-wwxd) <br>
 [yadifmod](https://github.com/HomeOfVapourSynthEvolution/VapourSynth-Yadifmod) <br>
 [temporalsoften](https://github.com/dubhater/vapoursynth-temporalsoften) <br>
-
+[waifu2x-ncnn-vulkan](https://github.com/nihui/waifu2x-ncnn-vulkan.git) (Dependencies) <br>
+[vapoursynth-waifu2x-ncnn-vulkan](https://github.com/Nlzy/vapoursynth-waifu2x-ncnn-vulkan.git)
 
 **Scripts:**<br>
-[adjust git20150322](https://github.com/dubhater/vapoursynth-adjust) <br>
-[havsfunc r30+git20180422](https://github.com/HomeOfVapourSynthEvolution/havsfunc) <br>
-[maskdetail git20151220](https://github.com/MonoS/VS-MaskDetail) <br>
-[mvsfunc r8+20161004](https://github.com/HomeOfVapourSynthEvolution/mvsfunc) <br>
+[adjust](https://github.com/dubhater/vapoursynth-adjust) <br>
+[havsfunc](https://github.com/HomeOfVapourSynthEvolution/havsfunc) <br>
+[maskdetail](https://github.com/MonoS/VS-MaskDetail) <br>
+[mvsfunc](https://github.com/HomeOfVapourSynthEvolution/mvsfunc) <br>
 [nnedi3_resample](https://github.com/mawen1250/VapourSynth-script) <br>
-[vsTAAmbk 0.7.6](https://github.com/HomeOfVapourSynthEvolution/vsTAAmbk) <br>
+[vsTAAmbk](https://github.com/HomeOfVapourSynthEvolution/vsTAAmbk) <br>
+[muvsfunc_numpy](https://github.com/WolframRhodium/muvsfunc) <br>
 
 dehalo_alpha, edgecleaner, fastlinedarken, finesharp, knlm, mcdegrainsharp, nnedi3_rpow2,
 psharpen, resamplehq, sharpaamcmod, showdiff, supersampledantialiasing, vshelpers:

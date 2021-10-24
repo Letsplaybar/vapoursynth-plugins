@@ -14,6 +14,8 @@ compile: exec_compile
 	cd plugins/flash3kyuu_deband/; ./waf configure; ./waf build; cd $(PWD)
 	$(foreach DIR,$(MEASON),  ./make_meason.sh $(DIR) $(PWD);)
 	cd plugins/vapoursynth-wwxd/; gcc -o libwwxd.so -fPIC -shared -O2 -Wall -Wextra -Wno-unused-parameter $(pkg-config --cflags vapoursynth) src/wwxd.c src/detection.c; cd $(PWD)
+	cd plugins/waifu2x-ncnn-vulkan/; mkdir build; cd build; cmake ../src; cmake --build . -j 4; cd $(PWD)
+	cd plugins/vapoursynth-waifu2x-ncnn-vulkan/; mkdir build; cd build; cmake ../src; cmake --build . -j 4; cd $(PWD)
 
 install: exec_install
 	$(foreach DIR,$(CONFIG), ./install_autogen.sh $(DIR) $(PWD);)
@@ -21,6 +23,8 @@ install: exec_install
 	$(foreach DIR,$(MEASON), ./install_meason.sh $(DIR) $(PWD);)
 	$(foreach SCRIPT,$(SCRIPTS), cp $(SCRIPT) /usr/lib/python3.8/;)
 	cp plugins/vapoursynth-wwxd/libwwxd.so /usr/local/lib/
+	cd plugins/waifu2x-ncnn-vulkan/build; make install; cd $(PWD)
+	cd plugins/vapoursynth-waifu2x-ncnn-vulkan/build; make install; cd $(PWD)
 
 exec_compile:
 	$(shell chmod +x make*.sh)
