@@ -13,7 +13,7 @@ compile: exec_compile
 	$(foreach DIR,$(AUTOGEN), ./make_autogen.sh $(DIR) $(PWD);)
 	cd plugins/flash3kyuu_deband/; ./waf configure; ./waf build; cd $(PWD)
 	$(foreach DIR,$(MEASON),  ./make_meason.sh $(DIR) $(PWD);)
-	cd plugins/vapoursynth-wwxd/; gcc -o libwwxd.so -fPIC -shared -O2 -Wall -Wextra -Wno-unused-parameter $(pkg-config --cflags vapoursynth) src/wwxd.c src/detection.c; cd $(PWD)
+	./make_wwxd.sh $(PWD)
 	cd plugins/waifu2x-ncnn-vulkan/; mkdir build; cd build; cmake ../src; cmake --build . -j 4; cd $(PWD)
 	cd plugins/vapoursynth-waifu2x-ncnn-vulkan/; mkdir build; cd build; cmake .. -DVAPOURSYNTH_HEADER_DIR=/usr/local/include/vapoursynth/; cmake --build . -j 4; cd $(PWD)
 
