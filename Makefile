@@ -25,6 +25,7 @@ install: exec_install
 	cp plugins/vapoursynth-wwxd/libwwxd.so /usr/local/lib/
 	cd plugins/waifu2x-ncnn-vulkan/build; make install; cd $(PWD)
 	cp plugins/waifu2x-ncnn-vulkan/build/waifu2x-ncnn-vulkan /usr/bin/
+	cp -r plugins/waifu2x-ncnn-vulkan/models/* /usr/bin/
 	cd plugins/vapoursynth-waifu2x-ncnn-vulkan/build; make install; cd $(PWD)
 	cp plugins/vapoursynth-waifu2x-ncnn-vulkan/build/libvsw2xnvk.so /usr/local/lib/
 
