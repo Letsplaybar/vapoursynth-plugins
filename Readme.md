@@ -94,6 +94,8 @@ make
 [nnedi3_resample](https://github.com/mawen1250/VapourSynth-script) <br>
 [vsTAAmbk](https://github.com/HomeOfVapourSynthEvolution/vsTAAmbk) <br>
 [muvsfunc_numpy](https://github.com/WolframRhodium/muvsfunc) <br>
+[G41Fun](https://github.com/groucho86/G41Fun) <br>
+[fvsfunc](https://github.com/Irrational-Encoding-Wizardry/fvsfunc) <br>
 
 dehalo_alpha, edgecleaner, fastlinedarken, finesharp, knlm, mcdegrainsharp, nnedi3_rpow2,
 psharpen, resamplehq, sharpaamcmod, showdiff, supersampledantialiasing, vshelpers:
