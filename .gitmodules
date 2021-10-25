@@ -199,3 +199,6 @@
 [submodule "plugins/vapoursynth-waifu2x-ncnn-vulkan"]
 	path = plugins/vapoursynth-waifu2x-ncnn-vulkan
 	url = https://github.com/Nlzy/vapoursynth-waifu2x-ncnn-vulkan.git
+[submodule "scripts/G41Fun"]
+	path = scripts/G41Fun
+	url = https://github.com/groucho86/G41Fun
