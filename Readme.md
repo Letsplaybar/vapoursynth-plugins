@@ -85,6 +85,7 @@ make
 [temporalsoften](https://github.com/dubhater/vapoursynth-temporalsoften) <br>
 [waifu2x-ncnn-vulkan](https://github.com/nihui/waifu2x-ncnn-vulkan.git) (Dependencies) <br>
 [vapoursynth-waifu2x-ncnn-vulkan](https://github.com/Nlzy/vapoursynth-waifu2x-ncnn-vulkan.git)
+[vapoursynth-mvtools-sf](https://github.com/IFeelBloated/vapoursynth-mvtools-sf) <br>
 
 **Scripts:**<br>
 [adjust](https://github.com/dubhater/vapoursynth-adjust) <br>

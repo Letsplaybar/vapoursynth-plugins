@@ -205,3 +205,6 @@
 [submodule "scripts/fvsfunc"]
 	path = scripts/fvsfunc
 	url = https://github.com/Irrational-Encoding-Wizardry/fvsfunc
+[submodule "plugins/vapoursynth-mvtools-sf"]
+	path = plugins/vapoursynth-mvtools-sf
+	url = https://github.com/IFeelBloated/vapoursynth-mvtools-sf
