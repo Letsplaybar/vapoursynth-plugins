@@ -14,7 +14,6 @@ libopencv-dev ocl-icd-libopencl1 opencl-headers libvulkan-dev glslang-dev
 glslang-tools libboost-filesystem-dev libboost-system-dev libcompute-dev  
 ```
 
-
 **Installation**:
 ```
 git clone --recurse-submodules -j8 https://github.com/Letsplaybar/vapoursynth-plugins.git
@@ -84,7 +83,7 @@ make
 [yadifmod](https://github.com/HomeOfVapourSynthEvolution/VapourSynth-Yadifmod) <br>
 [temporalsoften](https://github.com/dubhater/vapoursynth-temporalsoften) <br>
 [waifu2x-ncnn-vulkan](https://github.com/nihui/waifu2x-ncnn-vulkan.git) (Dependencies) <br>
-[vapoursynth-waifu2x-ncnn-vulkan](https://github.com/Nlzy/vapoursynth-waifu2x-ncnn-vulkan.git)
+[vapoursynth-waifu2x-ncnn-vulkan](https://github.com/Nlzy/vapoursynth-waifu2x-ncnn-vulkan.git) <br>
 [vapoursynth-mvtools-sf](https://github.com/IFeelBloated/vapoursynth-mvtools-sf) <br>
 
 **Scripts:**<br>
